@@ -1,3 +1,6 @@
+Program 1
+
+
 import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.*;
@@ -53,4 +56,109 @@ class JOLPanel extends JPanel {
         g2.draw(rightEye);
         g2.drawString("Happy Halloween Amigos!", 10, 20);
     }
+}
+
+
+
+Program 2
+
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.applet.*;
+
+import javax.swing.JApplet;
+import javax.swing.Timer;
+
+
+public class Ball extends JApplet
+	implements ActionListener
+	{
+ 
+	/**
+	 Data fields
+	 */
+	private int maxX = 400;
+	private int maxY = 600;
+	private int ballX = maxX / 2;
+	private int ballY = maxY / 2;
+	private int ballRadius = maxY / 4;
+	private int ballRadius2 = maxY / 5;
+	private int ballRadius3 = maxY / 9;
+	
+ 
+	private int xPos, yPos;  // hold the coordinates of the banner
+
+	public void init()
+	  {
+	    Container c = getContentPane();
+	    c.setBackground(Color.WHITE);
+	    xPos = c.getWidth();
+	    yPos = c.getHeight() / 2;
+	    Timer clock = new Timer(30, this);  // fires every 30 milliseconds
+	    clock.start();
+	  }
+
+	  // Called automatically after a repaint request
+	  public void paint1(Graphics h)
+	  {
+	    super.paint(h);
+	    h.drawString("/ O O \"", xPos, yPos);
+	  }
+
+	  // Called automatically when the timer fires
+	  public void actionPerformed(ActionEvent e)
+	  {
+	    Container c = getContentPane();
+
+	    // Adjust the horizontal position of the banner:
+	    xPos--;
+	    if (xPos < -100)
+	    {
+	      xPos = c.getWidth();
+	    }
+
+	    // Set the vertical position of the banner:
+	    yPos = c.getHeight() / 2;
+
+	    repaint();
+	  }
+	
+	  
+	//Methods
+		public void paint(Graphics g){
+		
+		
+		
+	// Draw Ball
+		g.drawOval(ballX - ballRadius,
+				   ballY - ballRadius,
+				   2 * ballRadius, 2 * ballRadius);
+		g.setColor(Color.orange);
+		
+		
+	//Draw Ball2
+		g.drawOval(ballX - ballRadius2,
+				   ballY - ballRadius,
+				   2 * ballRadius2, 2 * ballRadius);
+		g.setColor(Color.orange);
+		
+	//Draw Ball3
+		g.drawOval(ballX - ballRadius3,
+				   ballY - ballRadius,
+				   2 * ballRadius3, 2 * ballRadius);
+		g.setColor(Color.orange);
+		
+		g.drawString("Happy Halloween!!!", 50, 30);
+		
+				
+	}
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
 }
