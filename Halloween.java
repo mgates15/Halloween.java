@@ -1,4 +1,47 @@
-Program 1
+import java.awt.*;
+
+import javax.swing.*;
+
+public class Halloween1 extends JPanel {
+	public void paint(Graphics g){
+		super.paintComponent(g);
+		g.setColor(Color.red);
+		g.fillOval(200, 100, 75, 150);
+		g.setColor(Color.orange);
+		g.fillOval(225, 74, 25, 25);
+		int xPoints[] = {175, 210, 210};
+		int yPoints[] = {175, 125, 225};
+		int x1Points[] = {295, 264, 264}; 
+		int y1Points[] = {175, 125, 225};
+		int numPoint = 3;
+		g.fillPolygon(xPoints, yPoints, numPoint);
+		g.fillPolygon(x1Points, y1Points, numPoint);
+		g.drawLine(240, 245, 240, 400);
+		g.drawString("Happy Halloween!!", 30, 40);
+		g.drawString("This is dirtyfrazzers, the low key, spooky bat!", 150, 300 );
+	}
+	
+	
+	
+public static void main(String[] args)
+	{
+	  JFrame window = new JFrame("Scary");
+
+    
+      window.setBounds(500, 500, 500, 500);
+	  window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	  window.setVisible(true);
+	  Halloween1 panel = new Halloween1();
+	  panel.setBackground(Color.black);
+	  Container c = window.getContentPane();
+	  c.add(panel);
+	}
+
+}
+
+
+
+Program 2
 
 
 import java.awt.*;
@@ -23,7 +66,7 @@ public class JOL extends JApplet {
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(applet);
-        f.setSize(400,400);
+        f.setSize(300,300);
         f.setLocation(200,200);
         applet.init();
         f.setVisible(true);
@@ -60,7 +103,7 @@ class JOLPanel extends JPanel {
 
 
 
-Program 2
+Program 3
 
 
 import java.awt.*;
